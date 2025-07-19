@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Particle.js in Divs</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&family=Orbitron:wght@600&family=Righteous&family=Rokkitt:wght@600&family=Source+Code+Pro:wght@300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@800&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/fontawesome.min.css" integrity="sha384-BY+fdrpOd3gfeRvTSMT+VUZmA728cfF9Z2G42xpaRkUGu2i3DyzpTURDo5A6CaLK" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@200&family=Poppins:wght@800&family=Rowdies:wght@700&display=swap" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap" rel="stylesheet">
+<style>    
+html {
+    scroll-behavior: smooth;
+           ::-webkit-scrollbar {
+           width:4px; /* Change scrollbar width */
+            }
+
+          ::-webkit-scrollbar-track {
+           background: rgb(0, 0, 0); /* Change track color */
+}
+
+          ::-webkit-scrollbar-thumb {
+          background-color: rgb(255, 255, 255); /* Change thumb color */
+          border-radius: 10px; /* Round the thumb */
+}
+        }
+        
+        *{
+            margin:0;
+            padding: 0;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items:center;
+        }
+        .page1 {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            background-color: rgb(0, 0, 0);
+            color: white; /* Text color */
+            font-size: 48px; /* Adjust font size */
+        }
+        
+        ul{
+            font-size: 40px;
+            font-family: 'Comfortaa', sans-serif;
+            font-family: 'Orbitron', sans-serif;
+            font-family: 'Righteous', sans-serif;
+            font-family: 'Rokkitt', serif;
+            font-family: 'Source Code Pro', monospace;
+            
+        }
+        .text
+        {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            backdrop-filter: blur(6px);
+            position: absolute;
+            height: 100px;
+            top:6%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            width: 1100px;
+            border: solid white 1px;
+            border-radius: 100px;
+        }
+            ul {
+    font-size: 35px;
+    text-align: center; 
+    list-style: none; 
+            }
+
+
+ul li {
+    display: inline-block; 
+    margin: 0 10px; 
+}
+
+#nav_bar {
+    text-decoration: none;
+    color: white;
+    padding: 10px 20px; 
+     
+    border-radius: 100px;
+    transition: all 0.4s ease-in-out; 
+}
+
+#nav_bar:hover {
+    background-color: rgb(255, 255, 255);
+    color: black;
+    border-radius: 100px;
+    transition: all 0.4s ease-out;
+}
+        
+.logo_text {
+    position: absolute;
+    top: 16px;
+    left: 10px;
+    display: flex;
+    align-items: center;
+    color: white; /* Set color */
+    
+    font-size: 17px; /* Set font size */
+}
+.logo_bms
+{
+    position: relative;
+    height: 80px;
+    width: 80px;
+    background-color: rgba(255, 255, 255, 0);
+    border:solid rgba(255, 255, 255, 0) 2px;
+    padding: 3px;
+    border: solid white 1px;
+    backdrop-filter:blur(4px);
+    border-radius: 40px;
+    margin-right: 10px;
+}
+.bmscetext
+{
+  padding:20px;
+  font-family: 'Comfortaa', sans-serif;
+  background-color: rgba(255, 255, 255, 0);
+  
+  
+}
+.bmscetext:hover
+{
+   color: rgb(0, 0, 0);
+    transition: all 0.5s ease-in-out;
+    background-color: white;
+    border-radius: 60px;
+}
+
+.container
+{
+    display: inline-block;
+}
+.animate_text_main
+{
+    color: white;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    margin-left: 100px;
+    margin-right:100px;
+    left:200px;
+    
+    font-size: 1.3em;
+    letter-spacing:15px;
+    font-family: monospace;
+    border-right:5px solid;
+    width: 61.8%;
+    padding: 40px;
+    
+    white-space: nowrap;
+    overflow:hidden;
+    animation:
+        typing 6s  ,
+        cursor .0s step-end infinite alternate;
+
+    backdrop-filter: blur(4px);
+    
+    border:white solid 1px;
+    border-radius:100px;
+    pointer-events: none;
+   
+}
+@keyframes cursor{
+    40% {border-color:transparent}
+}
+@keyframes typing
+{
+    from{width:0}
+}
+.about_section
+{
+    display: flex;
+    position: absolute;
+    color:white;
+    align-items: center;
+    justify-content: center;
+    top:100px;
+    font-family: 'Courier New', Courier, monospace;
+    letter-spacing: 15px;
+    width: 500px;
+    height: 80px;
+    border:solid white 1px;
+    border-radius: 100px;
+    backdrop-filter: blur(10px);
+    transition:  0.5s, color 0.3s;
+}
+.about_section:hover
+{
+    background-color: white;
+    color: black;
+}
+
+.about_section_content
+{
+    display: flex;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    text-align: justify; 
+    top:250px;
+    width: 75%;
+    height: 50%;
+    padding: 20px;
+    border-radius: 60px;
+    font-size: 28px;
+    border:solid white 1px;
+    padding: 30px;
+    text-wrap: balance;
+    backdrop-filter: blur(4px);
+    font-family: 'Courier New', Courier, monospace;
+    transition:  0.5s, border-radius 0.3s;
+    
+    
+}
+.about_section_content:hover{
+    backdrop-filter: blur(100px);
+    border-radius: 100px;
+    width: 75%;
+    border:solid rgb(0, 249, 183) 1px;
+    padding: 50px;
+    
+}
+
+
+
+
+#myButton {
+  color: white;
+  background-color:rgba(0, 0, 0, 0);
+  border:none;
+  font-size: 35px;
+  padding:20px;
+  font-family: 'Comfortaa', sans-serif;
+  cursor: pointer;
+  transition: color 0.6s, background-color 0.6s, border-radius 0.6s;
+  text-decoration: none;
+}
+.name 
+{
+    display: flex;
+    font-family: 'Source Code Pro', monospace;
+    font-size: 45px;
+    
+}
+.role
+{
+    font-size: 30px;
+    letter-spacing: 2px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+#myButton:hover {
+  color: black;
+  background-color: white;
+  border-radius: 100px; 
+}
+
+      .container_team
+      {
+       max-width: 1400px;
+       margin: auto;
+       padding: 0 10px;
+       
+
+       
+      }
+      .team
+      {
+        padding: 80px 0;
+        
+        
+      }
+      .team_items
+      {
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        position: absolute;
+         font-family: 'Courier New', Courier, monospace;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        top:290px;
+        left:260px;
+        right:250px;
+        gap:75px;
+        
+        
+        
+        
+      }
+      
+      
+      
+      .team-item1
+      {
+        transition: transform 0.5s ease-in-out ,color 0.3s ease-in-out,backdrop-filter 0.3s ease-in-out,border 0.3s ease-in-out,padding 0.3s ease-in-out;
+
+        border: 1px solid transparent;
+      }
+      
+      .team-item1:hover{
+        transform: scale(1.2);
+        color: rgb(0, 229, 255);
+        backdrop-filter: blur(5px);
+        border:solid white 1px;
+        border-radius: 10px;
+        padding: 30px;
+      }
+      .team-item2
+      {
+        transition: transform 0.6s ease-in-out ,color 0.3s ease-in-out,backdrop-filter 0.3s ease-in-out,border 0.3s ease-in-out,padding 0.3s ease-in-out;
+
+        border: 1px solid transparent;
+      }
+      
+      .team-item2:hover{
+        transform: scale(1.2);
+        color: rgb(0, 229, 255);
+        backdrop-filter: blur(5px);
+        border:solid white 1px;
+        border-radius: 10px;
+        padding: 30px;
+      }.team-item3
+      {
+        transition: transform 0.6s ease-in-out ,color 0.3s ease-in-out,backdrop-filter 0.3s ease-in-out,border 0.3s ease-in-out,padding 0.3s ease-in-out,text-align 5s ease-in-out;
+        text-align: left;
+        border: 1px solid transparent;
+      }
+      
+      .team-item3:hover{
+        transform: scale(1.2);
+        transform: translateX(50% 50%);
+        color: rgb(0, 229, 255);
+        backdrop-filter: blur(5px);
+        border:solid white 1px;
+        border-radius: 10px;
+        padding: 30px;
+        
+      }.team-item4
+      {
+        transition: transform 0.6s ease-in-out ,color 0.3s ease-in-out,backdrop-filter 0.3s ease-in-out,border 0.3s ease-in-out, padding 0.3s ease-in-out,letter-spacing 0.3s ease-in-out, text-align 1s ease-in-out;
+        text-align: none;
+        
+        border: 1px solid transparent;
+      }
+      
+      .team-item4:hover{
+        transform: scale(1.2);
+        color: rgb(0, 229, 255);
+        backdrop-filter: blur(5px);
+        border:solid white 1px;
+        border-radius: 10px;
+        padding: 30px;
+       
+        
+      }
+ 
+
+
+      .ab{
+        transition: color 0.6s;
+        color: rgb(255, 255, 255);
+        text-decoration: none;
+        background-color: none;
+        
+      }
+      .ab:hover
+      {
+        
+        color:rgb(0, 0, 0);
+        
+        
+        
+        
+        
+    }
+   
+
+
+      
+     #button2
+     {
+        color: white;
+          background-color:rgba(0, 0, 0, 0);
+       border:none;
+       font-size: 35px;
+  padding:20px;
+  font-family: 'Comfortaa', sans-serif;
+  cursor: pointer;
+  transition: color 0.6s, background-color 0.6s, border-radius 0.6s;
+  position: absolute;
+  top:23px;
+  right:100px;
+  
+     }
+
+     #button2:hover{
+
+        color: black;
+  background-color: white;
+  border-radius: 100px; 
+     }
+
+
+     .mainteamtext
+{
+    display: flex;
+    position: absolute;
+    color:white;
+    align-items: center;
+    justify-content: center;
+    top:100px;
+    padding:10px;
+    font-family: 'Courier New', Courier, monospace;
+    letter-spacing: 15px;
+    width: 600px;
+    height: 80px;
+    border:solid white 1px;
+    border-radius: 100px;
+    backdrop-filter: blur(10px);
+    transition:  0.5s, color 0.3s;
+}
+.mainteamtext:hover
+{
+    background-color: white;
+    color: black;
+}
+
+     
+#picc
+{   transition: border-radius 0.4s ease-in-out , top 0.4s ease-in-out;
+    border-radius: 200px;
+    border:1px white solid;
+    padding: 3px;
+    top:0px;
+}
+
+#picc:hover{
+    border-radius:10px;
+    
+}
+.abcc{
+    color:white;
+    text-decoration: none;
+    padding:10px;
+}
+.abcc:hover
+{
+    background-color: white;
+    color:black;
+
+}
+
+.ab:hover{
+    color:aqua;
+}
+
+    </style>
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+   
+
+  <div class="contentt">
+
+    <div class="container">
+        <div id="particles-js-1" class="page1">
+            <span class="logo_text">
+            <img src="BMS_College_of_Engineering.svg.png" class="logo_bms" href=""></a>
+            <button id="myButton">BMSCE </button>
+ 
+                
+            </span>
+           
+            <div class="text">
+                <ul>
+                    <li class="one"><a href="#particles-js-1" id="nav_bar">Home</a></li>
+                    <li class="one"><a href="http://localhost:5173" id="nav_bar" target="_blank">About</a></li>
+                    <li class="one"><a href="#particles-js-2" id="nav_bar">Contact Us</a></li>
+                    <li class="one"><a href="clubs2.html" id="nav_bar">Clubs</a></li>
+                    <li class="one"><a href="http://localhost:3000/events.html" id="nav_bar">Events</a></li>
+                    
+                    
+                </ul>
+                
+                
+                
+            </div>
+               <button id="button2"><a href="registration.html" style="text-decoration: none;" class="abcc"> Welcome !</a></button>
+
+           
+            
+            <div class="animate_text_main">
+                 Unlock Your Potential.
+               </div>
+               
+             
+            
+        </div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <div id="particles-js-2" class="page1">
+            <div class="mainteamtext">
+                Meet Our Team
+            </div>
+          <div class="team">
+             <div class="container_team">
+                 <div class="team_items">
+                     <div class="team-item1">
+                          <img src="male-profile-picture-vector-2041304.jpg" id="picc">
+                           <div class="info">
+                             <h3 class = "name1">Tanush</h3>
+                             <p class = "role1">Developer</p>
+                              <div class="social">
+                                 <a href="#"class="ab"><i class ="fab fa-facebook-f"></i> </a>
+                                 <a href="#"class="ab"><i class ="fab fa-twitter"></i> </a>
+                                 <a href="#"class="ab"><i class ="fab fa-instagram"></i> </a>
+                                 <a href="#"class="ab"><i class ="fab fa-linkedin"></i> </a>
+                              </div>
+                          </div>
+                     </div>
+                     <div class="team-item2">
+                        <img src="male-profile-picture-vector-2041304.jpg" id="picc">
+                         <div class="info">
+                            <h3 class = "name2">Tarun</h3>
+                            <p class = "role2">Logistics</p>
+                            <div class="social">
+                               <a href="#"class="ab"><i class ="fab fa-facebook-f"></i> </a>
+                               <a href="#"class="ab"><i class ="fab fa-twitter"></i> </a>
+                               <a href="#"class="ab"><i class ="fab fa-instagram"></i> </a>
+                               <a href="#"class="ab"><i class ="fab fa-linkedin"></i> </a>
+                            </div>
+                        </div>
+                   </div>
+                   <div class="team-item3">
+                    <img src="male-profile-picture-vector-2041304.jpg" id="picc">
+                     <div class="info">
+                        <h3 class = "name3">Vachan</h3>
+                        <p class = "role3">Social</p>
+                        <div class="social">
+                           <a href="#" class="ab"><i class ="fab fa-facebook-f"></i> </a>
+                           <a href="#"class="ab"><i class ="fab fa-twitter"></i> </a>
+                           <a href="#"class="ab"><i class ="fab fa-instagram"></i> </a>
+                           <a href="#"class="ab"><i class ="fab fa-linkedin"></i> </a>
+                        </div>
+                    </div>
+               </div>
+               <div class="team-item4">
+                <img src="male-profile-picture-vector-2041304.jpg" id="picc">
+                 <div class="info">
+                    <h3 class = "name4">Vaibhav</h3>
+                    <p class = "role4">Mentor</p>
+                    <div class="social">
+                       <a href="#"class="ab"><i class ="fab fa-facebook-f"></i> </a>
+                       <a href="#"class="ab"><i class ="fab fa-twitter"></i> </a>
+                       <a href="#"class="ab"><i class ="fab fa-instagram"></i> </a>
+                       <a href="#"class="ab"><i class ="fab fa-linkedin"></i> </a>
+                    </div>
+                </div>
+           </div>
+                 </div>     
+             </div>
+        </div>
+                
+             
+                    
+                
+            
+        </div>
+        
+        
+    </div>
+</div>
+    <script>
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    
+    setTimeout(function () {
+        document.querySelector('.preloader').style.opacity = '0';
+        document.querySelector('.loading-text').style.opacity = '1';
+        document.querySelector('.content').style.display = 'block';
+    }, 2000); 
+});
+         document.addEventListener('DOMContentLoaded', function() {
+    const myButton = document.getElementById('myButton');
+    
+    
+    function openBMSCEWebsite() {
+        
+        window.open('https://www.bmsce.ac.in/', '_blank');
+    }
+    
+   
+    myButton.addEventListener('click', openBMSCEWebsite);
+});
+
+
+        function createParticles(containerId) {
+            particlesJS(containerId, {
+                "particles": {
+                    "number": {
+                        "value": 130,
+                        "density": {
+                            "enable": true,
+                            "value_area": 800
+                        }
+                    },
+                    "color": {
+                        "value": "#ffffff"
+                    },
+                    "shape": {
+                        "type": "circle",
+                        "stroke": {
+                            "width": 0,
+                            "color": "#000000"
+                        },
+                        "polygon": {
+                            "nb_sides": 10
+                        },
+                        "image": {
+                            "src": "img/github.svg",
+                            "width": 100,
+                            "height": 100
+                        }
+                    },
+                    "opacity": {
+                        "value": 1,
+                        "random": false,
+                        "anim": {
+                            "enable": true,
+                            "speed": 1,
+                            "opacity_min": 0.1,
+                            "sync": false
+                        }
+                    },
+                    "size": {
+                        "value": 5,
+                        "random": true,
+                        "anim": {
+                            "enable": false,
+                            "speed": 1,
+                            "size_min": 0.1,
+                            "sync": false
+                        }
+                    },
+                    "line_linked": {
+                        "enable": true,
+                        "distance": 150,
+                        "color": "#00FFEC",
+                        "opacity":2,
+                        "width": 0.5
+                    },
+                    "move": {
+                        "enable": true,
+                        "speed": 10,
+                        "direction": "none",
+                        "random": false,
+                        "straight": false,
+                        "out_mode": "out",
+                        "bounce": false,
+                        "attract": {
+                            "enable": false,
+                            "rotateX": 600,
+                            "rotateY": 1200
+                        }
+                    }
+                },
+                "interactivity": {
+                    "detect_on": "canvas",
+                    "events": {
+                        "onhover": {
+                            "enable": true,
+                            "mode": "repulse"
+                        },
+                        "onclick": {
+                            "enable": true,
+                            "mode": "repulse"
+                        },
+                        "resize": true
+                    },
+                    "modes": {
+                        "grab": {
+                            "distance": 400,
+                            "line_linked": {
+                                "opacity": 1
+                            }
+                        },
+                        "bubble": {
+                            "distance": 400,
+                            "size": 40,
+                            "duration": 2,
+                            "opacity": 8,
+                            "speed": 3
+                        },
+                        "repulse": {
+                            "distance": 130,
+                            "duration": 0.4
+                        },
+                        "push": {
+                            "particles_nb": 4
+                        },
+                        "remove": {
+                            "particles_nb": 2
+                        }
+                    }
+                },
+                "retina_detect": true
+            });
+        }
+
+        createParticles('particles-js-1');
+        createParticles('particles-js-2');
+        createParticles('particles-js-3');
+        createParticles('particles-js-4');
+        createParticles('particles-js-5');
+
+
+
+
+        document.addEventListener('DOMContentLoaded', function() {
+    const bmsceText = document.querySelector('.bmscetext');
+
+   
+    function openWebsite() {
+        
+        window.location.href = 'https://www.example.com';
+    }
+
+    // Add onclick event to the h1 element
+    bmsceText.addEventListener('click', openWebsite);
+});
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    const registerButton = document.getElementById('button2');
+
+    // Define the function to open the registration page
+    function openRegistrationPage() {
+       
+        window.open('registration.html', '_blank');
+    }
+
+    // Add onclick event to the button
+    registerButton.addEventListener('click', openRegistrationPage);
+});
+
+    </script>
+</body>
+</html>

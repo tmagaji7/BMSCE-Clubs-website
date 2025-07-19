@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Sixtyfour&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap');
+body {
+  margin: 0;
+}
+
+#container {
+  background-color: black;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative; 
+  background-image: url('/aron-visuals-bZZp1PmHI0E-unsplash.jpg');
+  z-index: 3;
+  
+}
+
+.content {
+  color: rgb(255, 255, 255);
+  font-size: 50px;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  font-family: 'Sixtyfour', sans-serif;
+  transition: color 0.3s;
+  bottom: 70%;
+  right:37%;
+  border:solid white 1px;
+  padding: 20px;
+  border-radius: 100px;
+  z-index: 1; /* Ensure the content div is rendered below the .info div */
+  transition: color 0.8s ease-in-out , background-color 0.8s ease-in-out , padding 1s ease-in-out;
+
+}
+
+.content:hover{
+  background-color: white;
+  color:black;
+  padding: 30px;
+}
+
+.info {
+  color: rgb(255, 255, 255);
+  font-size: 30px;
+  transition: color 0.3s;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+  position: relative; 
+}
+
+.information {
+  display: flex;
+  position: relative;
+  border-radius: 20px;
+  top:10%;
+  padding: 20px;
+  max-width: 70%;
+  max-height: 60%;
+  background-color: rgb(0, 0, 0);
+  border:1px solid white;
+  overflow: hidden;
+  left:1%;
+  font-family: 'Raleway', sans-serif;
+  transition: color 0.8s ease-in-out , background-color 0.8s ease-in-out , padding 1s ease-in-out;
+}
+
+.information:hover {
+  color: rgb(0, 0, 0);
+  background-color: white;
+  padding: 30px;
+}

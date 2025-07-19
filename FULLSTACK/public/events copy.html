@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Buttons</title>
+</head>
+<body>
+    <button onclick="sendEmail('Button 1', 'google_form_link_1')">Button 1</button>
+    <button onclick="sendEmail('Button 2', 'google_form_link_2')">Button 2</button>
+    <button onclick="sendEmail('Button 3', 'google_form_link_3')">Button 3</button>
+    <button onclick="sendEmail('Button 4', 'google_form_link_4')">Button 4</button>
+
+    <script>
+        function sendEmail(buttonName, googleFormLink) {
+            const recipientEmail = localStorage.getItem('recipientEmail');
+            const subject = "Button Clicked";
+            const body = `
+                <p>The button "${buttonName}" was clicked.</p>
+                <p>Here is the Google Form link: <a href="${googleFormLink}">${googleFormLink}</a></p>
+            `;
+
+            fetch(`/send-email?recipientEmail=${recipientEmail}&subject=${subject}&body=${encodeURIComponent(body)}`)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.text();
+                })
+                .then(data => {
+                    alert(data);
+                })
+                .catch(error => {
+                    console.error('There was a problem with your fetch operation:', error);
+                    alert('Error sending email');
+                });
+        }
+    </script>
+</body>
+</html>

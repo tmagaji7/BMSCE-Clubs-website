@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiple Canvases with Yellow Particles</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Jost:wght@200&family=Poppins:wght@800&family=Rowdies:wght@700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: #000; 
+        }
+
+        .page {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            
+        }
+
+        #canvas1,
+        #canvas2 {
+            margin: 0;
+            display: inline-block;
+        }
+
+        .bmscetext {
+    bottom: 50%;
+    left: 20px; 
+    position: absolute;
+    font-size: 7rem;
+    color: rgb(255, 255, 255);
+    font-family: 'Alfa Slab One', serif;
+}
+
+.bmscetext1 {
+    bottom: 10%;
+    left: 25%; 
+    transform: translateX(-50%); 
+    position: absolute;
+    font-size: 15rem;
+    color: rgb(255, 255, 255);
+    font-family: 'Alfa Slab One', serif;
+    background: linear-gradient(90deg, #ff0000, #420089, #ff0000, yellow, red);
+    background-size: 400%;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    animation: animate 20s linear infinite;
+}
+
+@keyframes animate {
+    0% {
+        background-position: 400%;
+    }
+
+    100% {
+        background-position: 100%;
+    }
+}
+
+.clubtext
+{ 
+    display: flex;
+    bottom: 70%;
+    font-size: 7rem;
+    color: rgb(255, 255, 255);
+    font-family: 'Alfa Slab One', serif;
+    justify-content: center;
+    position: absolute;
+    background: linear-gradient(90deg, #ff0000,  yellow, red);
+    background-size: 400%;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    animation: animate 20s linear infinite;
+}
+
+@keyframes animate {
+    0% {
+        background-position: 400%;
+    }
+
+    100% {
+        background-position: 100%;
+    }
+}
+
+
+.containercard {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row; 
+    position: absolute;
+    margin-inline: 1.5rem;
+    padding-block: 5rem;
+    bottom: 2%;
+}
+
+.card__container {
+    display: flex;
+    flex-direction: row; 
+    align-items: center; 
+    row-gap: 3rem;
+    flex-wrap: wrap; 
+    
+}
+
+
+.card__article {
+    position: relative;
+    overflow: hidden;
+    margin-right: 1rem; 
+    margin-bottom: 1rem; 
+    font-size: 30px;
+}
+
+.card__img {
+    width: 240px;
+    height: auto;
+    background-color: var(--container-color);
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+
+
+.card__title
+{
+    color:rgba(255, 255, 255, 0.361);
+    text-align: center;
+    font-size: 30px;
+    font-family:monospace;
+}
+#card1 {
+    transition: transform 0.3s;
+}
+
+#card1:hover {
+    transform: scale(1.2);
+}
+
+.card__article:hover .card__button {
+    background-color: rgba(0, 128, 0, 0);
+}
+
+.card__article:hover .card__title {
+    color: rgb(255, 225, 0);
+    animation: animateLetterSpacing 0.5s ease-in-out forwards; 
+
+}
+
+@keyframes animateLetterSpacing {
+    from {
+        letter-spacing: 2px; 
+    }
+    to {
+        letter-spacing: 5px; 
+    }
+}
+#card2
+{
+    transition: transform 0.3s;
+}
+
+#card2:hover{
+    transform: scale(1.2);
+}
+
+#card3
+{
+    transition: transform 0.3s;
+}
+
+#card3:hover{
+    transform: scale(1.2);
+}
+
+#card4
+{
+    transition: transform 0.3s;
+}
+
+#card4:hover{
+    transform: scale(1.2);
+}
+
+#card5
+{
+    transition: transform 0.3s;
+}
+
+#card5:hover{
+    transform: scale(1.2);
+}
+
+#card6
+{
+    transition: transform 0.3s;
+}
+
+#card6:hover{
+    transform: scale(1.2);
+}
+
+
+
+
+
+
+.button {
+    position: relative;
+    height: 50px;
+    width: 100px;
+    overflow: hidden;
+    font-size:10px ;
+    color: #000000;
+    display: inline-block;
+    font-size: 15px;
+    left: 30.5%;
+    line-height: 15px;
+    padding: 18px 18px 17px;
+    text-decoration: none;
+    border:none;
+    cursor: pointer;
+    background: #fff;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    margin-top: 10px; 
+    border-radius:20px;
+}
+
+.button span:first-child {
+  position: relative;
+  transition: color 600ms cubic-bezier(0.48, 0, 0.12, 1);
+  z-index: 10;
+}
+
+.button span:last-child {
+  color: rgb(0, 0, 0);
+  
+  display: block;
+  position: absolute;
+  bottom: 0;
+  transition: all 500ms cubic-bezier(0.48, 0, 0.12, 1);
+  z-index: 100;
+  opacity: 0;
+  top: 50%;
+  left: 50%;
+  transform: translateY(225%) translateX(-50%);
+  height: 14px;
+  line-height: 13px;
+}
+
+.button:after {
+  content: "";
+  position: absolute;
+  bottom: -50%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(255, 251, 0);
+  
+  transform-origin: bottom center;
+  transition: transform 600ms cubic-bezier(0.48, 0, 0.12, 1);
+  transform: skewY(9.3deg) scaleY(0);
+  z-index: 50;
+}
+
+.button:hover:after {
+  transform-origin: bottom center;
+  transform: skewY(9.3deg) scaleY(2);
+  border:none;
+}
+
+.button:hover span:last-child {
+  transform: translateX(-50%) translateY(-100%);
+  opacity: 1;
+  transition: all 900ms cubic-bezier(0.48, 0, 0.12, 1);
+}
+.scroll-text {
+    position: absolute;
+    bottom: 17%;
+    left: 10%;
+    transform: translateX(-50%) rotate(90deg);
+    color: white;
+    font-size: 1.5rem;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+}
+
+.line {
+    width: 20px;
+    height: 2px;
+    background-color: white;
+    margin: 0 10px;
+    
+}
+
+.menu-bar {
+    position: absolute;
+    top: 45%;
+    right: 3%;
+    transform: translateX(50%) rotate(90deg);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-family: poppins;
+    font-size: 30px;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.menu-item {
+    position: relative;
+    padding: 10px;
+    margin: 0 5px;
+    color: white;
+    cursor: pointer;
+    transition: color 0.8s, font-size 0.5s, margin 0.5s;
+}
+
+.menu-item:hover {
+    color: yellow; /* Adjust hover color as needed */
+    font-size: 45px; /* Adjust hover font size */
+    margin: 0 40px; /* Adjust hover margin */
+}
+
+.menu-item:hover::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 3px;
+    background-color: yellow; /* Adjust underline color */
+    animation: underlineAnimation 0.5s forwards;
+}
+
+@keyframes underlineAnimation {
+    from {
+        width: 0;
+    }
+    to {
+        width: 80%;
+    }
+}
+
+body {
+    scrollbar-color: yellow #1a1a1a; 
+    scrollbar-width: thin; 
+    overflow-x: hidden; 
+}
+
+/* Style the right scrollbar */
+body::-webkit-scrollbar {
+    width: 7px; /* Set the width of the scrollbar */
+    height: 10px; /* Set the height of the scrollbar */
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: yellow; /* Set the color of the scrollbar thumb */
+    border-radius: 10px; /* Set the border-radius to make it rounded */
+}
+
+body::-webkit-scrollbar-thumb:hover {
+    background-color: #ffcc00; /* Change the color on hover if needed */
+}
+
+body::-webkit-scrollbar-track {
+    background-color: #000000; /* Set the color of the scrollbar track */
+    border-radius: 10px; /* Set the border-radius to make it rounded */
+}
+
+    </style>
+</head>
+
+<body>
+    <div class="page page1">
+        <canvas id="canvas1" width="400" height="200"></canvas>
+        <div class="container1">
+            <p class="bmscetext">Bmsce</p>
+            <p class="bmscetext1">CLUBS.</p>
+        </div>
+        
+        <div class="menu-bar">
+            <div class="menu-item">Home</div>
+            <div class="menu-item">Clubs</div>
+            <div class="menu-item">Events</div>
+            <div class="menu-item">About</div>
+        </div>
+    </div>
+
+    <div class="page page2" id="page2">
+        <canvas id="canvas2" width="400" height="200"></canvas>
+
+        <div class="clubtext">Dive Deep</div>
+        <div class="containercard">
+            <div class="card__container">
+                <article class="card__article" id="card1">
+                    <img src="undefined_image (1).png" alt="image" class="card__img">
+                    <div class="card__data">
+                        <h2 class="card__title">DanceMania</h2>
+                        <button class="button" role="button"><span style="font-weight: 700; display: flex; align-items: center;justify-content: center;">Register</span><span style="font-weight: 700;display: flex;justify-content: center;align-items: center;">Do it !</span></button>
+                    </div>
+                </article>
+                <article class="card__article"id="card2">
+                    <img src="undefined_image (2).png" alt="image" class="card__img">
+                    <div class="card__data">
+                        <h2 class="card__title">Discovery</h2>
+                        <button class="button" role="button"><span style="font-weight: 700; display: flex; align-items: center;justify-content: center;">Register</span><span style="font-weight: 700;display: flex;justify-content: center;align-items: center;">Do it !</span></button>
+                    </div>
+                </article>
+                <article class="card__article"id="card3">
+                    <img src="undefined_image (3).png" alt="image" class="card__img">
+                    <div class="card__data">
+                        <h2 class="card__title">PaintGalore</h2>
+                        <button class="button" role="button"><span style="font-weight: 700; display: flex; align-items: center;justify-content: center;">Register</span><span style="font-weight: 700;display: flex;justify-content: center;align-items: center;">Do it !</span></button>
+                    </div>
+                </article>
+                <article class="card__article"id="card4">
+                    <img src="undefined_image.png" alt="image" class="card__img">
+                    <div class="card__data">
+                        <h2 class="card__title">CodeIo</h2>
+                        <button class="button" role="button"><span style="font-weight: 700; display: flex; align-items: center;justify-content: center;">Register</span><span style="font-weight: 700;display: flex;justify-content: center;align-items: center;">Do it !</span></button>
+                    </div>
+                </article>
+                <article class="card__article"id="card5">
+                    <img src="pc.png" alt="image" class="card__img">
+                    <div class="card__data">
+                        <h2 class="card__title">GamEinsta</h2>
+                        <button class="button" role="button"><span style="font-weight: 700; display: flex; align-items: center;justify-content: center;">Register</span><span style="font-weight: 700;display: flex;justify-content: center;align-items: center;">Do it !</span></button>
+                    </div>
+                </article>
+                <article class="card__article"id="card6">
+                    <img src="1d327abae29c672c77fdccb761c6cc5e7d12a19c_high.webp" alt="image" class="card__img">
+                    <div class="card__data">
+                        <h2 class="card__title">VfX</h2>
+                        <button class="button" onclick="sendEmail('Button 1', 'google_form_link_1')" role="button"><span style="font-weight: 700; display: flex; align-items: center;justify-content: center;">Register</span><span style="font-weight: 700;display: flex;justify-content: center;align-items: center;">Do it !</span></button>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function setupCanvas(canvasId) {
+            const canvas = document.getElementById(canvasId);
+            const ctx = canvas.getContext('2d');
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+
+            ctx.fillStyle = 'black'; // Set the background color to black
+            ctx.strokeStyle = 'white'; // You might want to change the stroke color as well
+
+            class Particle {
+                constructor(effect){
+                    this.effect = effect;
+                    this.radius = Math.floor(Math.random() * 2.5 + 1);
+                    this.x = this.radius + Math.random() * (this.effect.width - this.radius * 2);
+                    this.y = this.radius + Math.random() * (this.effect.height - this.radius * 2);
+                    this.vx = Math.random() * 1 - 0.5;
+                    this.vy = Math.random() * 1 - 0.5;
+                    this.pushX = 0;
+                    this.pushY = 0;
+                    this.friction = 0.99;
+                }
+                draw(context){
+                    context.beginPath();
+                    context.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+                    context.fillStyle = 'yellow'; // Set the particle color to yellow
+                    context.fill();
+                    //context.stroke();
+                }
+                update(){
+                    if (this.effect.mouse.pressed){
+                        const dx = this.x - this.effect.mouse.x;
+                        const dy = this.y - this.effect.mouse.y;
+                        const distance = Math.hypot(dx, dy);
+                        const force = (this.effect.mouse.radius / distance);
+                        if (distance < this.effect.mouse.radius){
+                            const angle = Math.atan2(dy, dx);
+                            this.pushX += Math.cos(angle) * force;
+                            this.pushY += Math.sin(angle) * force;
+                        }
+                    }
+
+                    this.x += (this.pushX *= this.friction) + this.vx;
+                    this.y += (this.pushY *= this.friction) + this.vy;
+
+                    if (this.x < this.radius){
+                        this.x = this.radius;
+                        this.vx *= -1;
+                    } else if (this.x > this.effect.width - this.radius){
+                        this.x = this.effect.width - this.radius;
+                        this.vx *= -1;
+                    }
+                    if (this.y < this.radius){
+                        this.y = this.radius;
+                        this.vy *= -1;
+                    } else if (this.y > this.effect.height - this.radius){
+                        this.y = this.effect.height - this.radius;
+                        this.vy *= -1;
+                    }
+                }
+                reset(){
+                    this.x = this.radius + Math.random() * (this.effect.width - this.radius * 2);
+                    this.y = this.radius + Math.random() * (this.effect.height - this.radius * 2);
+                }
+            }
+
+            class Effect {
+                constructor(canvas, context){
+                    this.canvas = canvas;
+                    this.context = context;
+                    this.width = this.canvas.width;
+                    this.height = this.canvas.height;
+                    this.particles = [];
+                    this.numberOfParticles = 400;
+                    this.createParticles();
+
+                    this.mouse = {
+                        x: 0,
+                        y: 0,
+                        pressed: false,
+                        radius: 150
+                    }
+
+                    window.addEventListener('resize', e => {
+                        this.resize(e.target.window.innerWidth, e.target.window.innerHeight);
+                    });
+                    window.addEventListener('mousemove', e => {
+                        if (this.mouse.pressed){
+                            this.mouse.x = e.x;
+                            this.mouse.y = e.y;
+                        }
+                    });
+                    window.addEventListener('mousedown', e => {
+                        this.mouse.pressed = true;
+                        this.mouse.x = e.x;
+                        this.mouse.y = e.y;
+                    });
+                    window.addEventListener('mouseup', e => {
+                        this.mouse.pressed = false;
+                    });
+                }
+                createParticles(){
+                    for (let i = 0; i < this.numberOfParticles; i++){
+                        this.particles.push(new Particle(this));
+                    }
+                }
+                handleParticles(context){
+                    this.connectParticles(context);
+                    this.particles.forEach(particle => {
+                        particle.draw(context);
+                        particle.update();
+                    });
+                }
+                connectParticles(context){
+                    const maxDistance = 0;
+                    for (let a = 0; a < this.particles.length; a++){
+                        for (let b = a; b < this.particles.length; b++){
+                            const dx = this.particles[a].x - this.particles[b].x;
+                            const dy = this.particles[a].y - this.particles[b].y;
+                            const distance = Math.hypot(dx, dy);
+                            if (distance < maxDistance){
+                                context.save();
+                                const opacity = 1 - (distance/maxDistance);
+                                context.globalAlpha = opacity;
+                                context.beginPath();
+                                context.moveTo(this.particles[a].x, this.particles[a].y);
+                                context.lineTo(this.particles[b].x, this.particles[b].y);
+                                context.stroke();
+                                context.restore();
+                            }
+                        }
+                    }
+                }
+                resize(width, height){
+                    this.canvas.width = width;
+                    this.canvas.height = height;
+                    this.width = width;
+                    this.height = height;
+                    const gradient = this.context.createLinearGradient(0,0, width, height);
+                    gradient.addColorStop(0, 'black');
+                    gradient.addColorStop(0.5, 'gold');
+                    gradient.addColorStop(1, 'orangered');
+                    this.context.fillStyle = gradient;
+                    this.context.strokeStyle = 'white';
+                    this.particles.forEach(particle => {
+                        particle.reset();
+                    });
+                }
+            }
+
+            const effect = new Effect(canvas, ctx);
+
+            function animate() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                effect.handleParticles(ctx);
+                requestAnimationFrame(animate);
+            }
+
+            animate();
+        }
+
+        // setup for canvas1
+        setupCanvas('canvas1');
+
+        // setup for canvas2
+        setupCanvas('canvas2');
+
+        function scrollToPage(pageId) {
+            const element = document.getElementById(pageId);
+            if (element) {
+                element.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start',
+                    inline: 'nearest'
+                });
+            }
+        }
+
+        // Add this event listener for smooth scrolling when clicking on "Clubs" menu item
+        document.querySelector('.menu-item:nth-child(2)').addEventListener('click', function () {
+            scrollToPage('page2');
+        });
+
+
+
+        document.querySelector('.menu-item:nth-child(2)').addEventListener('click', function () {
+        scrollToPage('page2');
+    });
+
+    // Add these event listeners for redirection to other HTML files
+    document.querySelector('.menu-item:nth-child(1)').addEventListener('click', function () {
+        window.location.href = 'landingupdated.html'; // Replace 'home.html' with the actual file path
+    });
+
+    document.querySelector('.menu-item:nth-child(3)').addEventListener('click', function () {
+        window.location.href = 'events.html'; // Replace 'events.html' with the actual file path
+    });
+
+    document.querySelector('.menu-item:nth-child(4)').addEventListener('click', function () {
+        window.location.href = 'http://localhost:5173'; // Replace 'about.html' with the actual file path
+    });
+
+
+
+
+    function sendEmail(buttonName, googleFormLink) {
+            const recipientEmail = localStorage.getItem('recipientEmail');
+            const subject = "Event Registration Succesfull";
+            const body = `
+                Thank You for registering !
+                <p>Here is the Google Form link: <a href="${googleFormLink}">${googleFormLink}</a></p>
+            `;
+
+            fetch(`/send-email?recipientEmail=${recipientEmail}&subject=${subject}&body=${encodeURIComponent(body)}`)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.text();
+                })
+                .then(data => {
+                    alert(data);
+                })
+                .catch(error => {
+                    console.error('There was a problem with your fetch operation:', error);
+                    alert('Error sending email');
+                });
+        }
+     
+    </script>
+</body>
+</html>

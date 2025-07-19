@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+    <!-- Your head content here -->
+</head>
+<body>
+    <div class="wrapper">
+        <div class="title">
+            Login Form
+        </div>
+        <form id="loginForm">
+            <div class="field">
+                <label for="recipientEmail">Email:</label>
+                <input type="email" id="recipientEmail" name="recipientEmail" required>
+            </div>
+            <div class="field">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div class="field">
+                <button type="button" onclick="login()">LOGIN</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        function login() {
+            // Retrieve form data
+            const recipientEmail = document.getElementById('recipientEmail').value;
+            const password = document.getElementById('password').value;
+
+            // Validate input (you can add more validation logic here)
+
+            // Make an AJAX request to the login route
+            fetch('/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ email: recipientEmail, password }),
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    // Redirect to landing page on successful login
+                    window.location.href = 'landingupdated.html';
+                } else {
+                    alert(data.message); // Display error message
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Error: Unable to log in');
+            });
+        }
+    </script>
+</body>
+</html>
